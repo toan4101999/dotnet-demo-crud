@@ -1,0 +1,45 @@
+@model List<Job>;
+@{
+    ViewData["Title"] = "Admin Page";
+
+    List<Job> jobs = Model;
+}
+<h1>Welcome To Admin Page
+</h1>
+<table class="table table-hover">
+    <thead>
+        <th>JobId</th>
+        <th>Name Company</th>
+        <th>Name Job</th>
+        <th>Salary</th>
+        <th>Location</th>
+        <th>JobImages</th>
+        <th>Option</th>
+    </thead>
+    <tbody>
+        @foreach (var job in jobs)
+        {
+            <tr>
+                <th>@job.JobId</th>
+
+                <th>@job.nameCompany</th>
+                <th>@job.nameJob</th>
+                <th>@job.salary</th>
+                <th>@job.location</th>
+                <th>
+                    <a>
+                        <img width="100" height="100" src="~/@job.imageCompany">
+                    </a>
+                </th>
+                <th>
+                    <a class="btn btn-primary" href='Admin/edit?jobId=@job.JobId'>Edit</a>
+                    <a class="btn btn-danger" href='Admin/delete?jobId=@job.JobId'>Delete</a>
+                    <a class="btn btn-danger" href='Admin/Upload?jobId=@job.JobId'>Add+UploadImages</a>
+                </th>
+            </tr>
+        }
+        <a class="btn btn-success" href="Admin/add">Add</a>
+
+
+    </tbody>
+</table>

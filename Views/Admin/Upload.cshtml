@@ -1,0 +1,26 @@
+<h1>File upload</h1>
+
+@model Job;
+@{
+    ViewData["Title"] = "Upload image";
+    Job job = Model;
+}
+<form method="post" asp-controller="Admin" asp-action="UploadFile" enctype="multipart/form-data">
+    <div class="form-group">
+        <label for="Id">JobId</label>
+        <input type="number" class="form-control" id="JobId" name="JobId" value="@job.JobId">
+        <input type="file" name="file" />
+    </div>
+    <button type="submit">Upload</button>
+
+</form>
+
+@*
+    If upload succeeded we will show nice message to user.
+*@
+@if (ViewBag.Message != null)
+{
+    <div class="alert alert-success" style="margin-top:20px">
+        @ViewBag.Message
+    </div>
+}

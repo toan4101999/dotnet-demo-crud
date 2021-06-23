@@ -1,0 +1,23 @@
+@{
+    ViewData["Title"] = "Add Job";
+}
+<form action="/Admin/SaveJob" method="post">
+    <div class="form-group">
+        <label for="NameJob">NameJob</label>
+        <input type="text" class="form-control" id="NameJob" name="NameJob">
+    </div>
+
+    <div class="form-group">
+        <label for="NameCompany">NameCompany</label>
+        <input type="text" class="form-control" id="NameCompany" name="NameCompany">
+    </div>
+    <div class="form-group">
+        <label for="Salary">Salary</label>
+        <input type="text" class="form-control" id="Salary" name="Salary">
+    </div>
+    <div class="form-group">
+        <label for="Location">Location</label>
+        <input type="text" class="form-control" id="Location" name="Location">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
